@@ -7,7 +7,7 @@ on:
 
 jobs:
   BuildRelease:
-    if: github.repository_owner == 'ZalithLauncher' && !startsWith(github.ref, 'refs/pull/') && github.ref_name == 'main'
+    if: github.repository_owner == 'Lulzxen' && !startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -58,7 +58,7 @@ jobs:
         continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
-          name: ZalithLauncher(Release) ${{ matrix.arch }}
+          name: ZalithIVORY-Release-${{ matrix.arch }}
           path: ZalithLauncher/build/outputs/apk/release/*
 
   BuildDebug:
